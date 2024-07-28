@@ -11,6 +11,8 @@ from time import sleep
 import re
 from bs4 import BeautifulSoup
 
+#informar o caminho para salvar o arquivo
+caminho_dados = None
 chrome_options = Options()
 
 # Ativar o modo headless (se desejar)
@@ -199,7 +201,7 @@ while True:
 
     
  #Salvar dados totais   
-caminho_csv = rf'C:\Users\User\Desktop\Dados_coletados\dados_sp\Dados_Finalizado.csv'
+caminho_csv = caminho_dados
 df = pd.DataFrame(dados_coletados)
 df.to_csv(caminho_csv, sep=';', index=False)
 print(cadastros)
